@@ -1,0 +1,20 @@
+{
+  "properties": {
+    "displayName": "Enforce Tag Requirement",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Enforce the requirement of providing at least one tag name and value.",
+    "parameters": {},
+    "policyRule": {
+      "if": {
+        "not": {
+          "field": "tags",
+          "exists": "true"
+        }
+      },
+      "then": {
+        "effect": "Deny"
+      }
+    }
+  }
+}
